@@ -2,9 +2,8 @@
 
 SLASH="/"
 [ -n "$RAINBOW_PORT_WEB_UI" ] && /scripts/config.py rpc-url "$RAINBOW_WEB_PATH""$SLASH"
-[ -n "$RAINBOW_PORT_BT_UI" ] && /scripts/config.py rpc-port $RAINBOW_PORT_BT_UI
 [ -n "$RAINBOW_PORT_TORRENT" ] && /scripts/config.py peer-port $RAINBOW_PORT_TORRENT
 
-echo "{\"flask_port\":$RAINBOW_PORT_WEB_UI, \"tm_port\":$RAINBOW_PORT_BT_UI}" > /opt/transmission/.config
+echo "{\"flask_port\":$RAINBOW_PORT_WEB_UI}" > /opt/transmission/.config
 
 exit 0

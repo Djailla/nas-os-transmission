@@ -10,7 +10,7 @@
     "port-forwarding-enabled": 0,
     "rpc-authentication-required": false,
     "rpc-password": "transmission",
-    "rpc-port": 9092,
+    "rpc-port": 9091,
     "rpc-url": "/transmission/",
     "rpc-username": "transmission",
     "rpc-whitelist": "127.0.0.1",

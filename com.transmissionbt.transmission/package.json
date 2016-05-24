@@ -10,7 +10,6 @@
     "redirect_mode": "transparent",
     "network_ports": {
         "WEB_UI": 9091,
-        "BT_UI": 9092,
         "TORRENT": 51413
     }
 }
