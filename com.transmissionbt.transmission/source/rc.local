@@ -9,7 +9,7 @@ case $1 in
         sed -i "s/\"rpc-port\": [0-9]*/\"rpc-port\": $RAINBOW_PORT_WEB_UI/" /etc/transmission-daemon/settings.json
         sed -i "s/\"peer-port\": [0-9]*/\"peer-port\": $RAINBOW_PORT_TORRENT/" /etc/transmission-daemon/settings.json
 
-        start_transmission=$(/opt/transmission/rc.py)
+        start_transmission=$(/opt/transmission/scripts/rc.py)
         if [ $start_transmission = "0" ]
         then
           service transmission-daemon $1
@@ -18,7 +18,7 @@ case $1 in
                             --make-pidfile \
                             --pidfile $PIDFILE \
                             --background \
-                            --chdir /opt/transmission \
+                            --chdir /opt/transmission/app \
                             --startas app.py
         fi
         ;;

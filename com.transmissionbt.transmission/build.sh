@@ -18,7 +18,9 @@ install -m 755 /home/source/settings.json /etc/transmission-daemon
 install -m 755 /home/source/etc/default/transmission-daemon /etc/default
 install -m 755 /home/source/etc/init.d/transmission-daemon /etc/init.d/
 
-mkdir -m 755 -p /opt/transmission
-cp -r /home/source/app/* /opt/transmission
+mkdir -m 755 -p /opt/transmission/app
+mkdir -m 755 -p /opt/transmission/scripts
+cp -r /home/source/app/* /opt/transmission/app/
+cp -r /home/source/scripts/* /opt/transmission/scripts/
 
 exit 0
