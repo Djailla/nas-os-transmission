@@ -5,6 +5,7 @@ from flask import Flask
 from flask import redirect
 from settings import bp
 import json
+import platform
 
 RAINBOW_CONFIG_FILE = '/opt/transmission/.config'
 RAINBOW_FLASK_PORT = 9091
@@ -17,7 +18,9 @@ except:
     pass
 
 app = Flask(__name__)
-app.debug = True
+if platform.system() == 'Darwin':
+    app.debug = True
+
 app.register_blueprint(bp, url_prefix='/apps/transmission')
 
 
