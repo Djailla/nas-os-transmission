@@ -1,0 +1,8 @@
+#!/bin/sh
+
+SLASH="/"
+[ -n "$RAINBOW_PORT_WEB_UI" ] && /scripts/config.py rpc-url "$RAINBOW_WEB_PATH""$SLASH"
+[ -n "$RAINBOW_PORT_WEB_UI" ] && /scripts/config.py rpc-port $RAINBOW_PORT_WEB_UI
+[ -n "$RAINBOW_PORT_TORRENT" ] && /scripts/config.py peer-port $RAINBOW_PORT_TORRENT
+
+exit 0
