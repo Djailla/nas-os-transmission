@@ -15,12 +15,12 @@
         "es": "Cliente de BitTorrent Transmission"
     }, 
     "description_short": {
-        "en": "Tranmission bittorrent client that can be controlled through several remote and Web UIs."
+        "en": "Transmission bittorrent client that can be controlled through several remote and Web UIs."
     }, 
     "visibility": "always", 
     "publisher_contact": "lateam@internet.com", 
     "description_long": {
-        "en": "Same description as 'Tranmission bittorrent client that can be controlled through several remote and Web UIs.' but a lot longer!"
+        "en": "Same description as 'Transmission bittorrent client that can be controlled through several remote and Web UIs.' but a lot longer!"
     }, 
     "changelog": {
         "en": "Awesome new features with this new version",

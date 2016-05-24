@@ -11,9 +11,32 @@
 #
 # By default this script does nothing.
 
-sed -i "s/\"rpc-port\": [0-9]*/\"rpc-port\": $RAINBOW_PORT_WEB_UI/" /etc/transmission-daemon/settings.json
-sed -i "s/\"peer-port\": [0-9]*/\"peer-port\": $RAINBOW_PORT_TORRENT/" /etc/transmission-daemon/settings.json
-service transmission-daemon $1
+PIDFILE=/opt/transmission/flask_app.pid
+
+case $1 in
+    start)
+        export LC_ALL=en_US.utf8
+        sed -i "s/\"flask_port\":[0-9]*/\"flask_port\":$RAINBOW_PORT_WEB_UI/" /opt/transmission/.config
+        sed -i "s/\"tm_port\":[0-9]*/\"tm_port\":$RAINBOW_PORT_BT_UI/" /opt/transmission/.config
+
+        sed -i "s/\"rpc-port\": [0-9]*/\"rpc-port\": $RAINBOW_PORT_BT_UI/" /etc/transmission-daemon/settings.json
+        sed -i "s/\"peer-port\": [0-9]*/\"peer-port\": $RAINBOW_PORT_TORRENT/" /etc/transmission-daemon/settings.json
+
+        start-stop-daemon --start \
+                          --make-pidfile \
+                          --pidfile $PIDFILE \
+                          --background \
+                          --chuid rainbow \
+                          --chdir /opt/transmission \
+                          --startas app.py
+        service transmission-daemon $1
+
+        ;;
+    stop)
+        service transmission-daemon $2
+        start-stop-daemon --stop --pidfile $PIDFILE
+        rm $PIDFILE
+        ;;
+esac
 
 exit 0
-

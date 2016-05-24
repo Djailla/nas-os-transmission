@@ -1,12 +1,16 @@
 {
-    "type": "application", 
-    "id": "com.transmissionbt.transmission", 
-    "version": "2.92", 
+    "type": "application",
+    "id": "com.transmissionbt.transmission",
+    "version": "2.92",
     "depends": [
         "org.debian.wheezy-lamp-1.2"
-    ], 
+    ],
+    "startup_mode": "auto",
+    "display_mode": "tab",
+    "redirect_mode": "transparent",
     "network_ports": {
-        "WEB_UI": 9091, 
+        "WEB_UI": 9091,
+        "BT_UI": 9092,
         "TORRENT": 51413
     }
 }
