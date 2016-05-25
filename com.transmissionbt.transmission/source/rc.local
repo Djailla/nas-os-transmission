@@ -10,9 +10,9 @@ case $1 in
         sed -i "s/\"peer-port\": [0-9]*/\"peer-port\": $RAINBOW_PORT_TORRENT/" /etc/transmission-daemon/settings.json
 
         start_transmission=$(/opt/transmission/scripts/rc.py)
-        if [ $start_transmission = "0" ]
+        if [ "$start_transmission" = "0" ]
         then
-          service transmission-daemon $1
+          service transmission-daemon "$1"
         else
           start-stop-daemon --start \
                             --make-pidfile \
@@ -23,7 +23,7 @@ case $1 in
         fi
         ;;
     stop)
-        service transmission-daemon $1
+        service transmission-daemon "$1"
         start-stop-daemon --stop --pidfile $PIDFILE
         rm $PIDFILE
         ;;
