@@ -1,4 +1,5 @@
 {
+    "type": "application",
     "id": "com.transmissionbt.transmission",
     "version": "2.92",
     "depends": [
