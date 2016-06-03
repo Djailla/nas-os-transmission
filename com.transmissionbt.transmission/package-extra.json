@@ -13,31 +13,22 @@
         "zh-tw": "Transmission BitTorrent \u7528\u6236\u7aef",
         "ja": "Transmission BitTorrent \u30af\u30e9\u30a4\u30a2\u30f3\u30c8",
         "es": "Cliente de BitTorrent Transmission"
-    }, 
+    },
     "description_short": {
         "en": "Transmission bittorrent client that can be controlled through several remote and Web UIs."
-    }, 
-    "visibility": "always", 
-    "publisher_contact": "lateam@internet.com", 
+    },
     "description_long": {
         "en": "Same description as 'Transmission bittorrent client that can be controlled through several remote and Web UIs.' but a lot longer!"
-    }, 
-    "changelog": {
-        "en": "Awesome new features with this new version",
-        "fr": "de super nouvelles fonctionnalit\u00e9es dans cette nouvelle version de transmission"
-    }, 
-    "categories": [
-        "official", 
-        "social", 
-        "demo_apps"
-    ], 
-    "publication_date": "2013-10-27",
-    "privacy_url": "http://www.transmissionbt.com",
-    "publisher_name": "Automattic", 
+    },
     "supported_languages": [
-        "en", 
+        "en",
         "fr"
-    ], 
-    "website_url": "http://www.transmissionbt.com",
-    "disclaimer": "This is a standard disclaimer"
+    ],
+    "categories": [
+        "utilities"
+    ],
+    "publisher_name": "Djailla",
+    "publisher_contact": "bastien.vallet@seagate.com",
+    "privacy_url": "http://www.transmissionbt.com",
+    "website_url": "http://www.transmissionbt.com"
 }
