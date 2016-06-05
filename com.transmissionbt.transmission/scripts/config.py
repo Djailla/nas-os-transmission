@@ -3,7 +3,7 @@
 import json
 import sys
 
-TRANSMISSION_SETTINGS = '/etc/transmission-daemon/settings.json'
+TRANSMISSION_SETTINGS = '/var/lib/transmission-daemon/info/settings.json'
 
 if len(sys.argv) < 3:
     sys.exit(1)
@@ -19,4 +19,3 @@ settings[sys.argv[1]] = value_type(sys.argv[2])
 
 with open(TRANSMISSION_SETTINGS, 'w') as settings_file:
     json.dump(settings, settings_file, indent=4)
-

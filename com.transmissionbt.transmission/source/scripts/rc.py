@@ -9,7 +9,7 @@ if __name__ == '__main__':
     if platform.system() == 'Darwin':
         TRANSMISSION_CONFIG_FILE = 'settings.json'
     else:
-        TRANSMISSION_CONFIG_FILE = '/etc/transmission-daemon/settings.json'
+        TRANSMISSION_CONFIG_FILE = '/var/lib/transmission-daemon/info/settings.json'
 
     try:
         with open(TRANSMISSION_CONFIG_FILE) as f:

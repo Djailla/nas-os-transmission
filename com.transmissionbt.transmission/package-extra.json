@@ -17,12 +17,8 @@
     "description_short": {
         "en": "Transmission bittorrent client that can be controlled through several remote and Web UIs."
     },
-    "description_long": {
-        "en": "Same description as 'Transmission bittorrent client that can be controlled through several remote and Web UIs.' but a lot longer!"
-    },
     "supported_languages": [
-        "en",
-        "fr"
+        "en"
     ],
     "categories": [
         "utilities"
@@ -30,5 +26,5 @@
     "publisher_name": "Djailla",
     "publisher_contact": "bastien.vallet@seagate.com",
     "privacy_url": "http://www.transmissionbt.com",
-    "website_url": "http://www.transmissionbt.com"
+    "website_url": "https://github.com/Djailla/nas-os-transmission"
 }

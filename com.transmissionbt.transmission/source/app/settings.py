@@ -17,7 +17,7 @@ if platform.system() == 'Darwin':
     TRANSMISSION_CONFIG_FILE = 'settings.json'
 else:
     SHARES_ROOT_PATH = "/shares"
-    TRANSMISSION_CONFIG_FILE = '/etc/transmission-daemon/settings.json'
+    TRANSMISSION_CONFIG_FILE = '/var/lib/transmission-daemon/info/settings.json'
 
 
 RAINBOW_CONFIG_FILE = '/opt/transmission/.config'
@@ -71,4 +71,9 @@ def do_save_settings():
 
 @bp.route('/setup_complete')
 def setup_complete():
-    return "Setup complete"
+    return render_template('complete.tpl')
+
+
+@bp.route('/restart')
+def restart():
+    os.system("sh /opt/transmission/scripts/restart.sh")

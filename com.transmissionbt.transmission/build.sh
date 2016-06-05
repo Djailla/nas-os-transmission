@@ -14,7 +14,7 @@ mkdir -p /var/run/transmission-daemon
 chown debian-transmission:debian-transmission /var/run/transmission-daemon
 
 install -m 755 /home/source/rc.local /etc
-install -m 755 /home/source/settings.json /etc/transmission-daemon
+install -m 755 /home/source/settings.json /var/lib/transmission-daemon/info
 install -m 755 /home/source/etc/default/transmission-daemon /etc/default
 install -m 755 /home/source/etc/init.d/transmission-daemon /etc/init.d/
 

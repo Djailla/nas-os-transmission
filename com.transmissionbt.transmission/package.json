@@ -1,10 +1,8 @@
 {
     "type": "application",
-    "id": "com.transmissionbt.transmission",
+    "id": "com.djailla.transmission",
     "version": "2.92",
-    "depends": [
-        "org.debian.wheezy-lamp-1.2"
-    ],
+    "depends": ["org.debian.wheezy-lamp-1.2"],
     "network_ports": {
         "WEB_UI": 9091,
         "TORRENT": 51413

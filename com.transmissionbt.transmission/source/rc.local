@@ -6,26 +6,31 @@ case $1 in
         export LC_ALL=en_US.utf8
         sed -i "s/\"flask_port\":[0-9]*/\"flask_port\":$RAINBOW_PORT_WEB_UI/" /opt/transmission/.config
 
-        sed -i "s/\"rpc-port\": [0-9]*/\"rpc-port\": $RAINBOW_PORT_WEB_UI/" /etc/transmission-daemon/settings.json
-        sed -i "s/\"peer-port\": [0-9]*/\"peer-port\": $RAINBOW_PORT_TORRENT/" /etc/transmission-daemon/settings.json
+        sed -i "s/\"rpc-port\": [0-9]*/\"rpc-port\": $RAINBOW_PORT_WEB_UI/" /var/lib/transmission-daemon/info/settings.json
+        sed -i "s/\"peer-port\": [0-9]*/\"peer-port\": $RAINBOW_PORT_TORRENT/" /var/lib/transmission-daemon/info/settings.json
 
         start_transmission=$(/opt/transmission/scripts/rc.py)
         if [ "$start_transmission" = "0" ]
         then
-          service transmission-daemon "$1"
+            service transmission-daemon "$1"
         else
-          start-stop-daemon --start \
-                            --make-pidfile \
-                            --pidfile $PIDFILE \
-                            --background \
-                            --chdir /opt/transmission/app \
-                            --startas app.py
+            start-stop-daemon --start \
+                              --make-pidfile \
+                              --pidfile $PIDFILE \
+                              --background \
+                              --chdir /opt/transmission/app \
+                              --startas app.py
         fi
         ;;
     stop)
-        service transmission-daemon "$1"
-        start-stop-daemon --stop --pidfile $PIDFILE
-        rm $PIDFILE
+        stop_transmission=$(/opt/transmission/scripts/rc.py)
+        if [ "$stop_transmission" = "0" ]
+        then
+            service transmission-daemon "$1"
+        else
+            start-stop-daemon --stop --pidfile $PIDFILE
+            rm $PIDFILE
+        fi
         ;;
 esac
 
