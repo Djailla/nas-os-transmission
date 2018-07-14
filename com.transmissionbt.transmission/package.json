@@ -2,7 +2,7 @@
     "type": "application",
     "id": "com.djailla.transmission",
     "version": "2.92",
-    "depends": ["org.debian.jessie-lamp-1.0"],
+    "depends": ["com.ubuntu.trusty-lamp-1.0"],
     "network_ports": {
         "WEB_UI": 9091,
         "TORRENT": 51413
